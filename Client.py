@@ -13,9 +13,10 @@ class Client:
 
         # Set up the socket connection to the server
         self.connection = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.run()
 
         # TODO: Finish init process with necessary code
+        self.host=host
+        self.server_port=server_port
 
     def run(self):
         # Initiate the connection to the server
@@ -25,10 +26,7 @@ class Client:
     def disconnect(self):
         # TODO: Handle disconnection
         pass
-<<<<<<< HEAD
 
-=======
->>>>>>> Martin
     def receive_message(self, message):
         # TODO: Handle incoming message
         pass
@@ -46,3 +44,4 @@ if __name__ == '__main__':
     No alterations is necessary
     """
     client = Client('localhost', 9998)
+    client.run()
