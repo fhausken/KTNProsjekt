@@ -23,9 +23,8 @@ class Client:
 
     def disconnect(self):
         # TODO: Handle disconnection
-        jisdhludhwuiwqh
         pass
-jgjhv
+
     def receive_message(self, message):
         # TODO: Handle incoming message
         pass
