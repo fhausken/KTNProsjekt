@@ -19,12 +19,12 @@ class Client:
 
     def run(self):
         # Initiate the connection to the server
+        # hello 
         self.connection.connect((self.host, self.server_port))
 
     def disconnect(self):
         # TODO: Handle disconnection
         pass
-jgjhv
     def receive_message(self, message):
         # TODO: Handle incoming message
         pass
