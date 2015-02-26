@@ -22,6 +22,7 @@ class Client:
         # Initiate the connection to the server
         # hello 
         self.connection.connect((self.host, self.server_port))
+        print("Connected")
 
     def disconnect(self):
         # TODO: Handle disconnection
