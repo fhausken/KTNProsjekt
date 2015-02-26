@@ -16,7 +16,11 @@ class MessageReceiver(Thread):
 
         # Flag to run thread as a deamon
         self.daemon = True
+<<<<<<< Updated upstream
         
+=======
+
+>>>>>>> Stashed changes
         # TODO: Finish initialization of MessageReceiver
 
     def run(self):
