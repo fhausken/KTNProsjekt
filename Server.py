@@ -23,6 +23,7 @@ class ClientHandler(SocketServer.BaseRequestHandler):
             received_string = self.connection.recv(4096)
             
             #TODO: Add handling of received payload from client
+            print(received_string)
 
 
 class ThreadedTCPServer(SocketServer.ThreadingMixIn, SocketServer.TCPServer):
@@ -41,7 +42,7 @@ if __name__ == "__main__":
 
     No alterations is necessary
     """
-    HOST, PORT = 'localhost', 9998
+    HOST, PORT = '78.91.42.106', 9998
     print 'Server running...'
     
     #Set up and initiate the TCP server
