@@ -21,7 +21,7 @@ class ClientHandler(SocketServer.BaseRequestHandler):
         # Loop that listens for messages from the client
         while True:
             received_string = self.connection.recv(4096)
-            
+            print(received_string)
             #TODO: Add handling of received payload from client
 
 
@@ -32,7 +32,7 @@ class ThreadedTCPServer(SocketServer.ThreadingMixIn, SocketServer.TCPServer):
 
     No alterations is necessary
     """
-    allow_reuse_address = True
+    allow_reuse_address = True #Statisk variabel
 
 if __name__ == "__main__":
     """

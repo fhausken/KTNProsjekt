@@ -25,8 +25,7 @@ class Client:
         print("Connected")
 
     def disconnect(self):
-        # TODO: Handle disconnection
-        pass
+        self.connection.close()
 
     def receive_message(self, message):
         # TODO: Handle incoming message
@@ -43,6 +42,14 @@ if __name__ == '__main__':
 
     No alterations is necessary.'localhost' 
     """
-    client = Client('78.91.42.106', 9998)
+    client = Client('localhost', 9998)
     client.run()
-    client.send_payload(1,'Hei')
+    try:
+        client.send_payload('Fredrik: ',"Hei")
+        client.send_payload('Fredrik: ',"Jeg er keen på is")
+    finally:
+        
+        client.disconnect()
+        print("Socket is shutdown")
+    
+    
