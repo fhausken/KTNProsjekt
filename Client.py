@@ -32,8 +32,8 @@ class Client:
         # TODO: Handle incoming message
         self.connection
 
-    def send_payload(self, client, data):
-        self.connection.send("" + client + data)
+    def send_payload(self, data):
+        self.connection.send("" + data)
 
 
 if __name__ == '__main__':
@@ -45,4 +45,4 @@ if __name__ == '__main__':
     """
     client = Client('78.91.42.106', 9998)
     client.run()
-    client.send_payload(1,'Hei')
+    client.send_payload('Hei')
