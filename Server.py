@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 import SocketServer
 
-
 class ClientHandler(SocketServer.BaseRequestHandler):
     """
     This is the ClientHandler class. Everytime a new client connects to the
@@ -9,7 +8,8 @@ class ClientHandler(SocketServer.BaseRequestHandler):
     only connected clients, and not the server itself. If you want to write
     logic for the server, you must write it outside this class
     """
-
+    messages = []
+    
     def handle(self):
         """
         This method handles the connection between a client and the server.
@@ -23,7 +23,7 @@ class ClientHandler(SocketServer.BaseRequestHandler):
             received_string = self.connection.recv(4096)
             
             #TODO: Add handling of received payload from client
-
+            messages.add(payload)
 
 class ThreadedTCPServer(SocketServer.ThreadingMixIn, SocketServer.TCPServer):
     """
