@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from threading import Thread
+import re
 
 class MessageReceiver(Thread):
     """
@@ -13,12 +14,22 @@ class MessageReceiver(Thread):
     This method is executed when creating a new MessageReceiver object
 
         """
-
+        t = Thread(target=self.take_input)
+        t.setDaemon=True
+        t.start()
         # Flag to run thread as a deamon
         self.daemon = True
 
         # TODO: Finish initialization of MessageReceiver
 
     def run(self):
-        # TODO: Make MessageReceiver receive and handle payloads
-        pass
+        while True:
+            #this thread stops here until it has data, so no need for time.sleep
+            data = raw_input()
+            command = re.findall("^[/]\w+", data)
+            if command:
+                if command[0] in self.commands:
+                    self.commands[command[0]]()
+                continue
+            if data != "":
+                self.send(self.parse({"request":"message", "message":data}))
